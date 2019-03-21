@@ -3,6 +3,7 @@ package s2
 import (
 	"errors"
 	"fmt"
+	"github.com/baskarap/s2id-converter"
 	"github.com/golang/geo/s2"
 )
 
@@ -10,6 +11,8 @@ const (
 	ErrInvalidLatlng = "Invalid LatLng being sent"
 	ErrInvalidLevel  = "Invalid level of S2Geo being sent"
 )
+
+var _ s2id_converter.Geo = (*Geo)(nil)
 
 type Geo struct {
 	level int
